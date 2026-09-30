@@ -1,0 +1,11 @@
+Retrieval-Augmented Generation (RAG) combines a search step with a language model to answer questions using external information.
+
+In a typical RAG workflow, a document set is first split into smaller chunks. Each chunk is converted into an embedding vector using a text embedding model. The system stores these vectors in a vector database or an in-memory index.
+
+When a user asks a question, the system embeds the query and finds the most similar chunks. These chunks are then passed to the model as context so the answer is grounded in relevant sources instead of relying only on the model's training data.
+
+RAG is helpful when you need fact-based answers from private documents, product manuals, company policies, PDFs, or technical notes. It reduces hallucinations by grounding outputs in retrieved evidence.
+
+Good RAG systems also include chunking strategy, metadata filtering, revision control, and evaluation. Chunk size affects both recall and latency. Smaller chunks improve retrieval precision, while larger chunks provide more context.
+
+You can build a simple RAG prototype using scikit-learn, NumPy, and local text files. For production workloads, you may add a vector database such as FAISS, Qdrant, or Pinecone and use a hosted or local embedding model.
